@@ -1,15 +1,13 @@
 package com.javacollectiondemo;
 
 import javax.swing.text.html.HTMLDocument;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class JavaCollectionDemo {
     public static void main(String[] args) {
         doListDemo();
         doStackDemo();
+        doQueueDEmo();
     }
     private static void doListDemo() {
         System.out.println("In doListDemo");
@@ -44,6 +42,30 @@ public class JavaCollectionDemo {
             System.out.println("NotFound");
         } else {
             System.out.println("Found");
+        }
+    }
+    private static void doQueueDEmo() {
+        System.out.println("\nIn DoQueueDemo");
+        PriorityQueue<String> queue = new PriorityQueue<>();
+        queue.add("Amit Sharma");
+        queue.add("Vijay Raj");
+        queue.add("Jai Shankar");
+        queue.add("Rai");
+        System.out.println("Head: "+queue.element());
+        System.out.println("Head: "+queue.peek());
+        System.out.println("Iterating The queue elements");
+        Iterator itr = queue.iterator();
+        while(itr.hasNext()) {
+            System.out.println(queue);
+            break;
+        }
+        queue.remove();
+        queue.poll();
+        System.out.println("After removing two elements");
+        Iterator<String> itr2 = queue.iterator();
+        while(itr2.hasNext()) {
+            System.out.println(queue);
+            break;
         }
     }
 }
